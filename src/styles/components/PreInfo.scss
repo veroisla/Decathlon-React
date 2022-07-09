@@ -1,0 +1,42 @@
+.info {
+    display: flex;
+    flex-direction: column;
+
+    &__links {
+        font-size: 12px;
+        line-height: 10px;
+        color: $--color-white;
+        background-color: $--color-bg-dark-grey;
+        text-transform: uppercase;
+        padding: 10px;
+        width:fit-content;
+        margin-bottom: 30px;
+    }
+
+    &__title {
+    font-size: 28px;
+    color: $--color-bg-blue;
+    font-weight: 700;
+    line-height: 28px;
+    width:fit-content;
+    margin: 0px 15px 15px 15px;
+
+    @media all and (min-width: 768px) {
+        font-size: 30px;
+        line-height: 30px;
+    }
+    @media all and (min-width: 1200px) {
+        font-size: 32px;
+        line-height: 32px;
+    }
+   }
+    &__text {
+    font-weight: 300;
+    line-height: 20px;
+    color: $--color-product-brand;
+    text-align: left;
+    width:fit-content;
+    font-size: 14px;
+    margin: 0px 0px 25px 15px;
+}}
+
