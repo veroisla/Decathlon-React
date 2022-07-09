@@ -8,17 +8,17 @@
 //  };
 // </script>
 
-// <section class="filter__ByTitle">
-//     <div class="filter__ByType">
-//         <label class="filter__type" for="">filtrar por deporte</label>
+// <section className="filter__ByTitle">
+//     <div className="filter__ByType">
+//         <label className="filter__type" for="">filtrar por deporte</label>
 //     </div>
 
 //     <ul>
 //     {#each uniqueDepartment as department}
-//     <li class="filter__check">
-//    <input class="filter__box" type="checkbox" name="sport" on:change={handleChange} value={department} group={department} >
+//     <li className="filter__check">
+//    <input className="filter__box" type="checkbox" name="sport" on:change={handleChange} value={department} group={department} >
 
-//      <label class="filter__label" for="">{department}</label>
+//      <label className="filter__label" for="">{department}</label>
 //     </li>
 //     {/each}
 //     </ul>
@@ -29,3 +29,13 @@
 //     @import '../styles/core/Vars.less';
 //     @import "../styles/components/Filters.less";
 // </style>
+
+import '../styles/core/Reset.scss';
+import '../styles/core/Vars.scss';
+import '../styles/components/Filters.scss';
+
+function FilterByDepartment(props) {
+  return <></>;
+}
+
+export default FilterByDepartment;

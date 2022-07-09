@@ -1,91 +1,117 @@
-// <!-- HEADER -->
-// <script>
-//     import IoIosMenu from 'svelte-icons/io/IoIosMenu.svelte';
-//     import FaWarehouse from 'svelte-icons/fa/FaWarehouse.svelte'
-//     import MdPersonOutline from 'svelte-icons/md/MdPersonOutline.svelte'
-//     import IoIosSearch from 'svelte-icons/io/IoIosSearch.svelte'
-//     import  MdShoppingCart from 'svelte-icons/md/MdShoppingCart.svelte'
-//     import IoIosHelpCircleOutline from 'svelte-icons/io/IoIosHelpCircleOutline.svelte';
-//     import Logo from "../assets/logo.png";
-// </script>
+import '../styles/core/Reset.scss';
+import '../styles/core/Vars.scss';
+import '../styles/components/Header.scss';
 
-// <header class="header">
-//   <div class="header__whiteText">
-//      <p class="header__blueBg"><strong>Cambios y devoluciones</strong> 60 días</p>
-//      <p class="header__blueBg header__blueBgComputer"><strong class="header__strongComputer">Clica y recoge</strong> en 1 hora gratis</p>
-//      <p class="header__blueBg header__blueBgComputer"><strong class="header__strongComputer">Puntos de recogida</strong> más de 6000 puntos</p>
-//      <p class="header__blueBg header__blueBgComputer"><strong class="header__strongComputer">Financiación inmediata</strong> con tu tarjeta bancaria</p>
-//    </div>
+import logo from '../images/logo.png';
+import { AiOutlineMenu } from 'react-icons/ai';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { TbBuildingWarehouse } from 'react-icons/tb';
+import { BsPerson } from 'react-icons/bs';
+import { IoIosHelpCircleOutline } from 'react-icons/io';
+import { AiOutlineSearch } from 'react-icons/ai';
+function Header() {
+  return (
+    <header className="header">
+      <div className="header__whiteText">
+        <p className="header__blueBg">
+          <strong>Cambios y devoluciones</strong> 60 días
+        </p>
+        <p className="header__blueBg header__blueBgComputer">
+          <strong className="header__strongComputer">Clica y recoge</strong> en
+          1 hora gratis
+        </p>
+        <p className="header__blueBg header__blueBgComputer">
+          <strong className="header__strongComputer">Puntos de recogida</strong>{' '}
+          más de 6000 puntos
+        </p>
+        <p className="header__blueBg header__blueBgComputer">
+          <strong className="header__strongComputer">
+            Financiación inmediata
+          </strong>{' '}
+          con tu tarjeta bancaria
+        </p>
+      </div>
 
-//  <nav class="header__menu">
-//     <!-- Icon Menu -->
-//     <div class="header__iconAndText header__menuIcon">
-//      <div class="header__icon--nav">
-//        <IoIosMenu />
-//      </div>
-//      <p>menú</p>
-//     </div>
+      <nav className="header__menu">
+        {/* <!-- Icon Menu --> */}
+        <div className="header__iconAndText header__menuIcon">
+          <div className="header__icon--nav">
+            <AiOutlineMenu />
+          </div>
+          <p>menú</p>
+        </div>
 
-//     <!-- Icon Decathlon -->
-//     <div class="header__menu--logo">
-//         <img class="header__menu--logoImg" src={Logo} alt="logo decathlon">
-//     </div>
+        {/* <!-- Icon Decathlon --> */}
+        <div className="header__menu--logo">
+          <img
+            className="header__menu--logoImg"
+            src={logo}
+            alt="logo decathlon"
+          />
+        </div>
 
-//     <!-- Search computer version -->
-//      <form class="search__computer">
-//       <input class="search__input" type="text" placeholder="Busca producto, deporte..." disabled>
-//       <div class="search__totalIcon">
-//        <div class="search__icon">
-//         <IoIosSearch />
-//        </div>
-//       </div>
-//      </form>
+        {/* <!-- Search computer version --> */}
+        <form className="search__computer">
+          <input
+            className="search__input"
+            type="text"
+            placeholder="Busca producto, deporte..."
+            disabled
+          ></input>
+          <div className="search__totalIcon">
+            <div className="search__icon">
+              <AiOutlineSearch />
+            </div>
+          </div>
+        </form>
 
-//     <!-- Icon Store -->
-//     <div class="header__iconAndText">
-//         <div class="header__icon--nav">
-//           <FaWarehouse/>
-//         </div>
-//         <p>tienda</p>
-//     </div>
+        {/* <!-- Icon Store --> */}
+        <div className="header__iconAndText">
+          <div className="header__icon--nav">
+            <TbBuildingWarehouse />
+          </div>
+          <p>tienda</p>
+        </div>
 
-//     <!-- Icon Perfil -->
-//     <div class="header__iconAndText">
-//       <div class="header__icon--nav">
-//         <MdPersonOutline />
-//       </div>
-//       <p>mi perfil</p>
-//     </div>
+        {/* <!-- Icon Perfil --> */}
+        <div className="header__iconAndText">
+          <div className="header__icon--nav">
+            <BsPerson />
+          </div>
+          <p>mi perfil</p>
+        </div>
 
-//     <!-- Icon Ayuda -->
-//     <div class="header__iconAndText header__help">
-//       <div class="header__icon--nav">
-//         <IoIosHelpCircleOutline />
-//       </div>
-//       <p>ayuda</p>
-//     </div>
+        {/* <!-- Icon Ayuda --> */}
+        <div className="header__iconAndText header__help">
+          <div className="header__icon--nav">
+            <IoIosHelpCircleOutline />
+          </div>
+          <p>ayuda</p>
+        </div>
 
-//     <!-- Icon Shop -->
-//     <div class="header__shopYellow">
-//      <div class="header__icon--nav">
-//        <MdShoppingCart/>
-//      </div>
-//     </div>
-// </nav>
+        {/* <!-- Icon Shop --> */}
+        <div className="header__shopYellow">
+          <div className="header__icon--nav">
+            <AiOutlineShoppingCart />
+          </div>
+        </div>
+      </nav>
 
-// <!-- SEARCH -->
-// <form class="search">
-//    <input class="search__input" type="text" placeholder="Busca producto, deporte...">
-//    <div class="search__totalIcon">
-//     <div class="search__icon">
-//      <IoIosSearch />
-//     </div>
-//    </div>
-//   </form>
-// </header>
+      {/* <!-- SEARCH --> */}
+      <form className="search">
+        <input
+          className="search__input"
+          type="text"
+          placeholder="Busca producto, deporte..."
+        ></input>
+        <div className="search__totalIcon">
+          <div className="search__icon">
+            <AiOutlineSearch />
+          </div>
+        </div>
+      </form>
+    </header>
+  );
+}
 
-// <style lang="less">
-//     @import "../styles/core/Reset.less";
-//     @import "../styles/core/Vars.less";
-//     @import "../styles/components/Header.less";
-// </style>
+export default Header;

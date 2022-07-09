@@ -1,9 +1,27 @@
+import React from 'react';
+
+// import { useEffect, useState } from 'react';
+// import { Routes, Route } from 'react-router-dom';
+// import { matchPath, useLocation } from 'react-router';
+
+import '../styles/core/Reset.scss';
+import '../styles/core/Vars.scss';
+
+import Header from '../components/Header';
+import PreInfo from './PreInfo';
+
+function App(props) {
+  return (
+    <div>
+      <Header />
+      <PreInfo />
+    </div>
+  );
+}
+
+export default App;
+
 /* <script>
-import Header from "./components/Header.svelte";
-import PreInfo from "./components/PreInfo.svelte";
-import Filters from "./components/Filters.svelte";
-import ListProducts from "./components/ListProducts.svelte";
-import { onMount } from 'svelte';
 
 let products = []
 // ---> Unique me da los checkbox sin repetir
@@ -105,7 +123,7 @@ $: productFiltered =
  <section lang="less">
  <Header/> 
  <PreInfo/>
- <div class="computerVersion">
+ <div className="computerVersion">
   <Filters {uniqueBrand}  {uniqueDepartment} {handlecheckboxBrand} {handlecheckboxDepartment}/>
   <!-- <ListProducts products={products}/>   -->
   <ListProducts products={productFiltered}/> 

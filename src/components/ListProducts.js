@@ -6,7 +6,7 @@
 // </script>
 
 // <main>
-//     <ul class="listProducts">
+//     <ul className="listProducts">
 //         {#if products.length === 0}
 //         <p>No existen productos con tu descripción</p>
 //         {:else}
@@ -27,3 +27,13 @@
 //     @import '../styles/core/Vars.less';
 //     @import "../styles/components/ListProducts.less";
 // </style>
+
+import '../styles/core/Reset.scss';
+import '../styles/core/Vars.scss';
+import '../styles/components/ListProducts.scss';
+
+function ListProducts(props) {
+  return <></>;
+}
+
+export default ListProducts;

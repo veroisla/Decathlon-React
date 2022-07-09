@@ -8,9 +8,9 @@
 
 // <div>
 //     <form>
-//      <div class="filter">
-//         <h3 class="filter__filtros">filtros</h3>
-//         <div class="filter__mobileVersion">
+//      <div className="filter">
+//         <h3 className="filter__filtros">filtros</h3>
+//         <div className="filter__mobileVersion">
 //         <FilterByDepartment {uniqueDepartment} {handlecheckboxDepartment}/>
 //          <FilterByBrand {uniqueBrand} {handlecheckboxBrand} />
 //         </div>
@@ -24,3 +24,13 @@
 //     @import '../styles/core/Vars.less';
 //     @import "../styles/components/Filters.less";
 // </style>
+
+import '../styles/core/Reset.scss';
+import '../styles/core/Vars.scss';
+import '../styles/components/Filters.scss';
+
+function Filters(props) {
+  return <></>;
+}
+
+export default Filters;

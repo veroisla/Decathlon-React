@@ -7,18 +7,18 @@
 //     handlecheckboxBrand(event.target.value);
 // };
 // </script>
-    
-// <section class="filter__ByTitle">
-//     <div class="filter__ByType"> 
-//       <label class="filter__type" for="">filtrar por marca</label>
+
+// <section className="filter__ByTitle">
+//     <div className="filter__ByType">
+//       <label className="filter__type" for="">filtrar por marca</label>
 //     </div>
-   
-//     <ul> 
+
+//     <ul>
 //         {#each uniqueBrand as brand}
-//              <li class="filter__check"> 
-//              <input  class="filter__box" type="checkbox" name="brand" on:change={handleChange} value={brand} group={brand}>
-//              <label class="filter__label" for="">{brand}</label>
-//              </li>  
+//              <li className="filter__check">
+//              <input  className="filter__box" type="checkbox" name="brand" on:change={handleChange} value={brand} group={brand}>
+//              <label className="filter__label" for="">{brand}</label>
+//              </li>
 //         {/each}
 //     </ul>
 // </section>
@@ -27,6 +27,14 @@
 //         @import '../styles/core/Reset.less';
 //         @import '../styles/core/Vars.less';
 //         @import "../styles/components/Filters.less";
-//     </style> 
+//     </style>
 
+import '../styles/core/Reset.scss';
+import '../styles/core/Vars.scss';
+import '../styles/components/Filters.scss';
 
+function FilterByBrand(props) {
+  return <></>;
+}
+
+export default FilterByBrand;
