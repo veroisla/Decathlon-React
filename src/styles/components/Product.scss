@@ -1,76 +1,76 @@
-// @import "../core/Reset.scss";
-// @import "../core/Vars.scss";
-// .product {
-//     width: 50%;
+@import "../core/Reset.scss";
+@import "../core/Vars.scss";
+.product {
+    width: 50%;
 
-//     @media all and (min-width: 1200px) {
-//         width: 30%;
-//     }
+    @media all and (min-width: 1200px) {
+        width: 30%;
+    }
 
-//     &__article {
-//         display: flex;
-//         flex-direction: column;
-//         position: relative;
-//         // width: 180px;
-//         border: 1.5px solid $--color-border-white;
-//         align-items: center;
-//         padding: 2.4rem 1.6rem 1.6rem;
+    &__article {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        // width: 180px;
+        border: 1.5px solid $--color-border-white;
+        align-items: center;
+        padding: 2.4rem 1.6rem 1.6rem;
 
-//         @media all and (min-width: 768px) {
-//             width: 360px;
-//         }
-//         @media all and (min-width: 1200px) {
-//             width: 400px;
-//           }}
+        @media all and (min-width: 768px) {
+            width: 360px;
+        }
+        @media all and (min-width: 1200px) {
+            width: 400px;
+          }}
 
-//     &__imgPrice {
-//         display: flex;
-//         flex-direction: column;
-//         align-items: center;
+    &__imgPrice {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-//         @media all and (min-width: 768px) {
-//             flex-direction: row;
-//         }}
+        @media all and (min-width: 768px) {
+            flex-direction: row;
+        }}
 
-//     &__img {
-//         width: 130px;  
-//         margin-bottom: 10px;
+    &__img {
+        width: 130px;  
+        margin-bottom: 10px;
 
-//         @media all and (min-width: 768px) {
-//             width: 150px;
-//         }}
+        @media all and (min-width: 768px) {
+            width: 150px;
+        }}
 
-//     &__price {
-//         font-size: 14px;
-//         font-weight: bold;
-//         background-color: $--color-bg-yellow;
-//         padding: 4px;
-//         border-radius: 5px;
-//         text-align: center;
-//         margin-bottom: 30px;
-//         width: fit-content;
+    &__price {
+        font-size: 14px;
+        font-weight: bold;
+        background-color: $--color-bg-yellow;
+        padding: 4px;
+        border-radius: 5px;
+        text-align: center;
+        margin-bottom: 30px;
+        width: fit-content;
 
-//         @media all and (min-width: 768px) {
-//            align-self: flex-start;
-//            margin-left: 30px;
-//         }}
+        @media all and (min-width: 768px) {
+           align-self: flex-start;
+           margin-left: 30px;
+        }}
 
-//     &__label {
-//         font-size: 12px;
-//         font-weight: 700;
-//         color: $--color-product-brand;
-//         margin-bottom: 8px;
-//     }
+    &__label {
+        font-size: 12px;
+        font-weight: 700;
+        color: $--color-product-brand;
+        margin-bottom: 8px;
+    }
 
-//     &__webLabel {
-//         font-size: 12px;
-//         text-align: center;
-//         text-transform: uppercase;
-//         color: $--color-product-brand;
-//         margin-bottom: 5px;
-//     }
+    &__webLabel {
+        font-size: 12px;
+        text-align: center;
+        text-transform: uppercase;
+        color: $--color-product-brand;
+        margin-bottom: 5px;
+    }
 
-//     &__leadTime {
-//         font-size: 11px;
-//         color: $--color-product-online;
-//     }}
+    &__leadTime {
+        font-size: 11px;
+        color: $--color-product-online;
+    }}

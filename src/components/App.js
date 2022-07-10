@@ -9,6 +9,7 @@ import '../styles/core/Vars.scss';
 import Header from '../components/Header';
 import PreInfo from './PreInfo';
 import getApiData from '../services/DecathlonApi';
+import ListProducts from './ListProducts';
 
 function App(props) {
   const [dataProducts, setDataProducts] = useState([]);
@@ -23,6 +24,7 @@ function App(props) {
     <div>
       <Header />
       <PreInfo />
+      <ListProducts products={dataProducts} />
     </div>
   );
 }
