@@ -5,6 +5,7 @@ import { matchPath, useLocation } from 'react-router';
 
 import '../styles/core/Reset.scss';
 import '../styles/core/Vars.scss';
+import '../styles/components/App.scss';
 
 import Header from '../components/Header';
 import PreInfo from './PreInfo';
@@ -83,17 +84,20 @@ function App(props) {
     });
 
   return (
-    <div>
+    <>
       <Header />
       <PreInfo />
-      <ListProducts products={productFilters} />
-      <Filters
-        brand={getBrand()}
-        handleFilterBrand={handleFilterBrand}
-        department={getDepartment()}
-        handleFilterDepartment={handleFilterDepartment}
-      />
-    </div>
+      <div class="computerVersion">
+        {' '}
+        <Filters
+          brand={getBrand()}
+          handleFilterBrand={handleFilterBrand}
+          department={getDepartment()}
+          handleFilterDepartment={handleFilterDepartment}
+        />
+        <ListProducts products={productFilters} />
+      </div>
+    </>
   );
 }
 
