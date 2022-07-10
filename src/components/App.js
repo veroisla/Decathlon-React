@@ -10,9 +10,12 @@ import Header from '../components/Header';
 import PreInfo from './PreInfo';
 import getApiData from '../services/DecathlonApi';
 import ListProducts from './ListProducts';
+import Filters from './Filters';
+import Product from './Product';
 
 function App(props) {
   const [dataProducts, setDataProducts] = useState([]);
+  const [filterBrand, setFilterBrand] = useState([]);
 
   useEffect(() => {
     getApiData().then((data) => {
@@ -20,11 +23,39 @@ function App(props) {
     });
   }, []);
 
+  //GET BRAND
+  const getBrand = () => {
+    const productBrand = dataProducts.map((product) => product.brand.label);
+    const uniqueBrand = productBrand.filter((brand, index) => {
+      return productBrand.indexOf(brand) === index;
+    });
+    return uniqueBrand;
+  };
+
+  const handleFilterBrand = (value) => {
+    if (filterBrand.includes(value)) {
+      const newBrand = filterBrand.filter((brand) => brand !== value);
+      setFilterBrand(newBrand);
+    } else {
+      setFilterBrand([...filterBrand, value]);
+    }
+  };
+
+  //FILTERS
+  const productFilters = dataProducts.filter((product) => {
+    if (filterBrand.length === 0) {
+      return true;
+    } else {
+      return filterBrand.includes(product.brand.label);
+    }
+  });
+
   return (
     <div>
       <Header />
       <PreInfo />
-      <ListProducts products={dataProducts} />
+      <ListProducts products={productFilters} />
+      <Filters brand={getBrand()} handleFilterBrand={handleFilterBrand} />
     </div>
   );
 }
