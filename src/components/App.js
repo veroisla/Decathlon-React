@@ -1,16 +1,24 @@
 import React from 'react';
-
-// import { useEffect, useState } from 'react';
-// import { Routes, Route } from 'react-router-dom';
-// import { matchPath, useLocation } from 'react-router';
+import { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { matchPath, useLocation } from 'react-router';
 
 import '../styles/core/Reset.scss';
 import '../styles/core/Vars.scss';
 
 import Header from '../components/Header';
 import PreInfo from './PreInfo';
+import getApiData from '../services/DecathlonApi';
 
 function App(props) {
+  const [dataProducts, setDataProducts] = useState([]);
+
+  useEffect(() => {
+    getApiData().then((data) => {
+      setDataProducts(data);
+    });
+  }, []);
+
   return (
     <div>
       <Header />
