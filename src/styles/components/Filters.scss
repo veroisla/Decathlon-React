@@ -62,14 +62,19 @@
      }
 
     &__box {
-     font-size: 70px;
-     border: 1px solid  $--color-bg-blue;
-     fill: $--color-bg-blue;
-     font-weight: 700;
+    -webkit-appearance: none;
+     -moz-appearance: none;
+     -o-appearance: none;
+     appearance: none;
      line-height: 28px;
      margin-right: 5px;
-     width: fit-content;
-    }
+     border: solid 1.5px $--color-bg-blue;
+     width: 15px;
+     height: 15px;
+     cursor: pointer;
+     &:checked {
+     background-color: $--color-bg-blue;
+     }}
 
     &__label {
      color: $--color-icons-grey;

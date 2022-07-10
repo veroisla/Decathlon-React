@@ -11,7 +11,6 @@
         display: flex;
         flex-direction: column;
         position: relative;
-        // width: 180px;
         border: 1.5px solid $--color-border-white;
         align-items: center;
         padding: 2.4rem 1.6rem 1.6rem;
@@ -68,6 +67,11 @@
         text-transform: uppercase;
         color: $--color-product-brand;
         margin-bottom: 5px;
+    }
+
+    &__star {
+        color: $--color-bg-yellow;
+        margin-top: 8px;
     }
 
     &__leadTime {

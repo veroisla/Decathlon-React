@@ -46,7 +46,7 @@ function App(props) {
   //GET DEPARTMENT
   const getDepartment = () => {
     const productDepartment = dataProducts.map(
-      (product) => product.departmentLabel
+      (product) => product.sportGroups[0].label
     );
     const uniqueDepartment = productDepartment.filter((department, index) => {
       return productDepartment.indexOf(department) === index;
@@ -71,7 +71,7 @@ function App(props) {
       if (filterDepartment.length === 0) {
         return true;
       } else {
-        return filterDepartment.includes(product.departmentLabel);
+        return filterDepartment.includes(product.sportGroups[0].label);
       }
     })
 
@@ -87,7 +87,7 @@ function App(props) {
     <>
       <Header />
       <PreInfo />
-      <div class="computerVersion">
+      <div className="computerVersion">
         {' '}
         <Filters
           brand={getBrand()}
