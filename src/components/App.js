@@ -16,6 +16,7 @@ import Product from './Product';
 function App(props) {
   const [dataProducts, setDataProducts] = useState([]);
   const [filterBrand, setFilterBrand] = useState([]);
+  const [filterDepartment, setFilterDepartment] = useState([]);
 
   useEffect(() => {
     getApiData().then((data) => {
@@ -41,21 +42,57 @@ function App(props) {
     }
   };
 
-  //FILTERS
-  const productFilters = dataProducts.filter((product) => {
-    if (filterBrand.length === 0) {
-      return true;
+  //GET DEPARTMENT
+  const getDepartment = () => {
+    const productDepartment = dataProducts.map(
+      (product) => product.departmentLabel
+    );
+    const uniqueDepartment = productDepartment.filter((department, index) => {
+      return productDepartment.indexOf(department) === index;
+    });
+    return uniqueDepartment;
+  };
+
+  const handleFilterDepartment = (value) => {
+    if (filterDepartment.includes(value)) {
+      const newDepartment = filterDepartment.filter(
+        (department) => department !== value
+      );
+      setFilterDepartment(newDepartment);
     } else {
-      return filterBrand.includes(product.brand.label);
+      setFilterDepartment([...filterDepartment, value]);
     }
-  });
+  };
+
+  //FILTERS
+  const productFilters = dataProducts
+    .filter((product) => {
+      if (filterDepartment.length === 0) {
+        return true;
+      } else {
+        return filterDepartment.includes(product.departmentLabel);
+      }
+    })
+
+    .filter((product) => {
+      if (filterBrand.length === 0) {
+        return true;
+      } else {
+        return filterBrand.includes(product.brand.label);
+      }
+    });
 
   return (
     <div>
       <Header />
       <PreInfo />
       <ListProducts products={productFilters} />
-      <Filters brand={getBrand()} handleFilterBrand={handleFilterBrand} />
+      <Filters
+        brand={getBrand()}
+        handleFilterBrand={handleFilterBrand}
+        department={getDepartment()}
+        handleFilterDepartment={handleFilterDepartment}
+      />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import '../styles/core/Vars.scss';
 import '../styles/components/Filters.scss';
 
 import FilterByBrand from '../components/FilterByBrand';
+import FilterByDepartment from './FilterByDepartment';
 
 function Filters(props) {
   return (
@@ -13,6 +14,10 @@ function Filters(props) {
           <FilterByBrand
             brands={props.brand}
             handleFilterBrand={props.handleFilterBrand}
+          />
+          <FilterByDepartment
+            departments={props.department}
+            handleFilterDepartment={props.handleFilterDepartment}
           />
         </div>
       </div>
