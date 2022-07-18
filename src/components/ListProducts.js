@@ -7,11 +7,15 @@ import Product from './Product';
 
 function ListProducts(props) {
   if (props.products.length === 0) {
-    return <p>No existen productos que coincidan con tu búsqueda</p>;
+    return (
+      <p className="listProducts__noProduct">
+        No existen productos que coincidan con tu búsqueda
+      </p>
+    );
   } else {
     const productElements = props.products.map((product, index) => {
       return (
-        <li className=" product" key={index}>
+        <li className="product" key={index}>
           <Product product={product} />
         </li>
       );

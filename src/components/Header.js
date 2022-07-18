@@ -2,6 +2,7 @@ import '../styles/core/Reset.scss';
 import '../styles/core/Vars.scss';
 import '../styles/components/Header.scss';
 
+import { Link } from 'react-router-dom';
 import logo from '../images/logo.png';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
@@ -9,6 +10,7 @@ import { TbBuildingWarehouse } from 'react-icons/tb';
 import { BsPerson } from 'react-icons/bs';
 import { IoIosHelpCircleOutline } from 'react-icons/io';
 import { AiOutlineSearch } from 'react-icons/ai';
+
 function Header() {
   return (
     <header className="header">
@@ -42,14 +44,17 @@ function Header() {
         </div>
 
         {/* <!-- Icon Decathlon --> */}
-        <div className="header__menu--logo">
-          <img
-            className="header__menu--logoImg"
-            src={logo}
-            alt="logo decathlon"
-            title="Decthlon, página principal"
-          />
-        </div>
+        <Link to={'/'}>
+          {' '}
+          <div className="header__menu--logo">
+            <img
+              className="header__menu--logoImg"
+              src={logo}
+              alt="logo decathlon"
+              title="Decthlon, página principal"
+            />
+          </div>
+        </Link>
 
         {/* <!-- Search computer version --> */}
         <form className="search__computer">

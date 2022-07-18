@@ -7,6 +7,13 @@
     flex-wrap: wrap;
     justify-content: center;
     text-decoration: none;
+
+    &__noProduct {
+       color: $--color-no-product;
+       display: flex;
+       width: fit-content;
+       margin: 20px 30px 0px 30px;
+    }
 }
 
 

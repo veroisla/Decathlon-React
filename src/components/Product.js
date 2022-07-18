@@ -1,12 +1,13 @@
 import '../styles/core/Reset.scss';
 import '../styles/core/Vars.scss';
 import '../styles/components/Product.scss';
+
 import { Link } from 'react-router-dom';
 import { AiTwotoneStar } from 'react-icons/ai';
 
 function Product(props) {
   return (
-    <Link to={'/productDetail'}>
+    <Link to={`/productDetail/${props.product.brand.id}`}>
       <div className="product__article">
         <div className="product__imgPrice">
           <img

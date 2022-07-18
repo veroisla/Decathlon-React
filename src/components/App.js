@@ -70,9 +70,17 @@ function App(props) {
     }
   };
 
+  //GET ID PRODUCT/DETAIL
+  const { pathname } = useLocation();
+  const dataPath = matchPath('/productDetail/:id', pathname);
+
+  const productId = dataPath !== null ? dataPath.params.id : null;
+  const productFound = dataProducts.find(
+    (product) => product.brand.id === productId
+  );
+
   //FILTERS
   const productFilters = dataProducts
-
     .filter((product) => {
       if (filterDepartment.length === 0) {
         return true;
@@ -113,10 +121,12 @@ function App(props) {
               </>
             }
           />
-          <Route path="/productDetail" element={<ProductDetail />} />
+          <Route
+            path="/productDetail/:id"
+            element={<ProductDetail product={productFound} />}
+          />
         </Routes>
       </main>
-
       <Footer />
     </>
   );
