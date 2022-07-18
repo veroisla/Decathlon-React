@@ -1,0 +1,110 @@
+
+@import "../core/Reset.scss";
+@import "../core/Vars.scss";
+
+
+.productDetail {
+    width: 100%;
+    font-family: 'Roboto';
+    font-family: 'Roboto Condensed', sans-serif;
+
+    @media all and (min-width: 1200px) {
+        width: 30%;
+    }
+
+    &__article {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        border-bottom: 1.5px solid $--color-border-white;
+        align-items: center;
+        padding: 0rem 1.6rem 1.6rem;
+
+        @media all and (min-width: 768px) {
+            width: 360px;
+        }
+        @media all and (min-width: 1200px) {
+            width: 400px;
+          }}
+
+    &__imgPrice {
+        display: flex;
+        flex-direction: column;
+        align-items:flex-start;
+
+        @media all and (min-width: 768px) {
+            flex-direction: row;
+        }}
+
+    &__img {
+        width: 330px;  
+        margin-bottom: 10px;
+
+        @media all and (min-width: 768px) {
+            width: 150px;
+        }}
+
+    &__webLabel {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 28px;
+        color: $--color-detail;
+        margin-bottom: 5px;
+    }
+
+    &__starPrice {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+     &__star {
+        color: $--color-bg-yellow;
+        margin-top: 8px;
+        justify-content: flex-start;
+        font-size: 20px;
+    }
+    &__id {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        color: $--color-detail-id;
+        margin-bottom: 10px;
+    }
+    &__price {
+        font-size: 24px;
+        line-height: 24px;
+        font-weight: bold;
+        background-color: $--color-bg-yellow;
+        padding: 4px;
+        border-radius: 5px;
+        text-align: center;
+        margin-bottom: 30px;
+        width: fit-content;
+        color: $--color-icons-grey;
+
+        @media all and (min-width: 768px) {
+           align-self: flex-start;
+           margin-left: 30px;
+        }}
+
+&__present {
+    font-size: 14px;
+    line-height: 20px;
+    color: $--color-detail;
+    border-top: 2px solid $--color-border-grey;
+    border-bottom: 2px solid $--color-border-grey;
+    text-align: center;
+    padding: 5px;
+
+    &__icon {
+        color: $--color-icons-grey;
+        margin-right: 10px;
+    }
+   
+    &--strong {
+        color: $--color-bg-blue;
+        margin-left: 8px;
+    }
+}
+}

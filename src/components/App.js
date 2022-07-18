@@ -96,7 +96,7 @@ function App(props) {
         return filterBrand.includes(product.brand.label);
       }
     });
-
+  console.log(productFilters);
   return (
     <>
       <Header />
