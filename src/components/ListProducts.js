@@ -11,7 +11,7 @@ function ListProducts(props) {
   } else {
     const productElements = props.products.map((product, index) => {
       return (
-        <li className="product__article product" key={index}>
+        <li className=" product" key={index}>
           <Product product={product} />
         </li>
       );

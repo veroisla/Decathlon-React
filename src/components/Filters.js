@@ -7,8 +7,11 @@ import FilterByDepartment from './FilterByDepartment';
 import { MdOutlineSettingsInputComposite } from 'react-icons/md';
 
 function Filters(props) {
+  const handleSubmitForm = (props) => {
+    props.PreventSubmitForm();
+  };
   return (
-    <form>
+    <form onSubmit={handleSubmitForm}>
       <div className="filter">
         <h3 className="filter__filtros">
           <MdOutlineSettingsInputComposite className="filter__icon" />

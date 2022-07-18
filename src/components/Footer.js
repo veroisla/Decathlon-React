@@ -27,9 +27,9 @@ function Footer(params) {
             <i className="fab fa-linkedin-in footer__icon"></i>
           </a>
         </p>
-        <a className="footer__up" href="./index.html#top">
+        {/* <a className="footer__up" href="/">
           <BsArrowUp className="footer__arrow" />
-        </a>
+        </a> */}
       </footer>
     </>
   );

@@ -47,6 +47,7 @@ function Header() {
             className="header__menu--logoImg"
             src={logo}
             alt="logo decathlon"
+            title="Decthlon, página principal"
           />
         </div>
 

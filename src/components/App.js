@@ -11,8 +11,8 @@ import Header from '../components/Header';
 import PreInfo from './PreInfo';
 import getApiData from '../services/DecathlonApi';
 import ListProducts from './ListProducts';
+import ProductDetail from './ProductDetail';
 import Filters from './Filters';
-import Product from './Product';
 import Footer from '../components/Footer';
 
 function App(props) {
@@ -25,6 +25,10 @@ function App(props) {
       setDataProducts(data);
     });
   }, []);
+
+  const PreventSubmitForm = (ev) => {
+    ev.preventDefault();
+  };
 
   //GET BRAND
   const getBrand = () => {
@@ -68,6 +72,7 @@ function App(props) {
 
   //FILTERS
   const productFilters = dataProducts
+
     .filter((product) => {
       if (filterDepartment.length === 0) {
         return true;
@@ -87,17 +92,31 @@ function App(props) {
   return (
     <>
       <Header />
-      <PreInfo />
-      <div className="computerVersion">
-        {' '}
-        <Filters
-          brand={getBrand()}
-          handleFilterBrand={handleFilterBrand}
-          department={getDepartment()}
-          handleFilterDepartment={handleFilterDepartment}
-        />
-        <ListProducts products={productFilters} />
-      </div>
+      <main>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <PreInfo />
+                <div className="computerVersion">
+                  {' '}
+                  <Filters
+                    PreventSubmitForm={PreventSubmitForm}
+                    brand={getBrand()}
+                    handleFilterBrand={handleFilterBrand}
+                    department={getDepartment()}
+                    handleFilterDepartment={handleFilterDepartment}
+                  />
+                  <ListProducts products={productFilters} />
+                </div>
+              </>
+            }
+          />
+          <Route path="/productDetail" element={<ProductDetail />} />
+        </Routes>
+      </main>
+
       <Footer />
     </>
   );
