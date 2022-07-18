@@ -1,40 +1,13 @@
 @import "../core/Reset.scss";
 @import "../core/Vars.scss";
+
 .listProducts{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     text-decoration: none;
-
-    &__up {
-bottom: 0;
-width: 0;
-height: 0;
-border-radius: 0;
-border-style: solid;
-border-width: 0 0 6.4rem 6.4rem;
-border-color: transparent transparent #0082c3 transparent;
-background: transparent;
--webkit-box-shadow: none;
-box-shadow: none;  
-
-&__up {
-    color: white;
-    top: 3.7rem;
-    right: 0.6rem;
-    height: 1.7rem;
-    width: 1.7rem;
-}
-}
 }
 
-// .product__li {
-//     display: inline-block;
-//     height: auto;
-//     width: 200px;
-//     border: 1.5px solid @--color-border-white;
-//     align-items: center;
-//     padding: 2.4rem 1.6rem 1.6rem;
-// }
+
 

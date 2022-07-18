@@ -4,7 +4,6 @@ import '../styles/components/ListProducts.scss';
 import '../styles/components/Product.scss';
 
 import Product from './Product';
-import { BsArrowUp } from 'react-icons/bs';
 
 function ListProducts(props) {
   if (props.products.length === 0) {
@@ -18,12 +17,9 @@ function ListProducts(props) {
       );
     });
     return (
-      <section>
+      <>
         <ul className="listProducts">{productElements}</ul>
-        <div className="listProducts__up">
-          <BsArrowUp className="listProducts__arrow" />
-        </div>
-      </section>
+      </>
     );
   }
 }
