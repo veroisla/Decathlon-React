@@ -19,6 +19,8 @@
         width: 330px;  
         margin-bottom: 10px;}
 
+      
+
     &__webLabel {
         font-size: 24px;
         font-weight: 700;
@@ -70,6 +72,53 @@
     &--strong {
         color: $--color-bg-blue;
         margin-left: 8px;
+    }
+
+    &__addToShop {
+        justify-content: space-between;
+        border: 1px solid red;
+        text-transform: uppercase;
+        background-color: $--color-bg-yellow;
+        padding: 5px;
+    }
+
+    @media all and (min-width: 768px) { 
+        &__article {
+            display: flex;
+            flex-direction: row;
+            margin: 20px 150px 20px 150px;
+            justify-content: space-between;
+            align-items: flex-start
+        }
+
+        &__present {
+            text-align: left;
+        }  
+
+        &__img {
+            display: flex;
+            justify-content: center;
+            width: auto;
+            height: 450px;
+            margin-right: 60px;
+        } 
+    }
+
+    @media all and (min-width: 1200px) {
+        &__article {
+            margin: 20px 300px 20px 300px;
+            align-items: center;
+        }
+
+        &__img {
+            width: 450px;
+            margin-right: 40px;
+        } 
+        
+        &__info {
+            flex-direction: column;
+            width: 40%;
+        } 
     }
 }
 

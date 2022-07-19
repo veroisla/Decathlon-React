@@ -4,6 +4,8 @@ import '../styles/components/ProductDetail.scss';
 
 import { AiTwotoneStar } from 'react-icons/ai';
 import { GiPresent } from 'react-icons/gi';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
+
 function ProductDetail(props) {
   return (
     <>
@@ -17,23 +19,30 @@ function ProductDetail(props) {
           src={props.product.models[0].image.url}
           alt={props.product.models[0].image.url}
         />
-        <p className="productDetail__webLabel">{props.product.webLabel}</p>
-        <div className="productDetail__star">
-          <AiTwotoneStar />
-          <AiTwotoneStar />
-          <AiTwotoneStar />
-          <AiTwotoneStar />
-          <AiTwotoneStar />
+        <div className="productDetail__info">
+          {' '}
+          <p className="productDetail__webLabel">{props.product.webLabel}</p>
+          <div className="productDetail__star">
+            <AiTwotoneStar />
+            <AiTwotoneStar />
+            <AiTwotoneStar />
+            <AiTwotoneStar />
+            <AiTwotoneStar />
+          </div>
+          <p className="productDetail__id">{props.product.models[0].modelId}</p>
+          <p className="productDetail__price">
+            {props.product.models[0].price} €
+          </p>
+          <p className="productDetail__present">
+            <GiPresent className="productDetail__present__icon" />
+            ¿Quieres regalar este producto?{' '}
+            <strong className="productDetail__present--strong">Más info</strong>
+          </p>
+          <p className="productDetail__addToShop">
+            <strong>Añadir a la cesta</strong>
+            <AiOutlineShoppingCart />
+          </p>
         </div>
-        <p className="productDetail__id">{props.product.models[0].modelId}</p>
-        <p className="productDetail__price">
-          {props.product.models[0].price} €
-        </p>
-        <p className="productDetail__present">
-          <GiPresent className="productDetail__present__icon" />
-          ¿Quieres regalar este producto?{' '}
-          <strong className="productDetail__present--strong">Más info</strong>
-        </p>
       </div>
     </>
   );
