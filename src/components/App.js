@@ -76,7 +76,7 @@ function App(props) {
 
   const productId = dataPath !== null ? dataPath.params.id : null;
   const productFound = dataProducts.find(
-    (product) => product.brand.id === productId
+    (product) => product.models[0].modelId === productId
   );
 
   //FILTERS

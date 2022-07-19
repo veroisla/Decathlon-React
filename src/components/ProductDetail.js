@@ -39,8 +39,8 @@ function ProductDetail(props) {
             <strong className="productDetail__present--strong">Más info</strong>
           </p>
           <p className="productDetail__addToShop">
-            <strong>Añadir a la cesta</strong>
-            <AiOutlineShoppingCart />
+            <strong>Añadir a la cesta</strong>{' '}
+            <AiOutlineShoppingCart className="productDetail__iconShop" />
           </p>
         </div>
       </div>

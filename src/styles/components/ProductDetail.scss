@@ -41,8 +41,8 @@
         line-height: 16px;
         color: $--color-detail-id;
         margin-bottom: 10px;
-    }
-    &__price {
+     }
+     &__price {
         font-size: 24px;
         line-height: 24px;
         font-weight: bold;
@@ -55,34 +55,48 @@
         color: $--color-icons-grey;}
 
 
-&__present {
-    font-size: 14px;
-    line-height: 20px;
-    color: $--color-detail;
-    border-top: 2px solid $--color-border-grey;
-    border-bottom: 2px solid $--color-border-grey;
-    text-align: center;
-    padding: 5px;}
-
-    &__icon {
+     &__present {
+     font-size: 14px;
+     line-height: 20px;
+     color: $--color-detail;
+     border-top: 2px solid $--color-border-grey;
+     border-bottom: 2px solid $--color-border-grey;
+     text-align: center;
+     padding: 5px; 
+     
+     &__icon {
         color: $--color-icons-grey;
         margin-right: 10px;
+     }
     }
+
+    
    
-    &--strong {
+     &--strong {
         color: $--color-bg-blue;
         margin-left: 8px;
-    }
+     }
 
-    &__addToShop {
-        justify-content: space-between;
-        border: 1px solid red;
+
+    &__addToShop { 
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;  
+        align-items: center;
         text-transform: uppercase;
         background-color: $--color-bg-yellow;
-        padding: 5px;
-    }
+        color: $--color-product-brand;
+        padding: 10px 0px 10px 0px;
+        margin-top: 15px;
+        border-radius: 5px; 
+       
+     }
 
-    @media all and (min-width: 768px) { 
+     &__iconShop {
+        font-size: 25px;
+     }
+
+     @media all and (min-width: 768px) { 
         &__article {
             display: flex;
             flex-direction: row;
@@ -102,9 +116,9 @@
             height: 450px;
             margin-right: 60px;
         } 
-    }
+     }
 
-    @media all and (min-width: 1200px) {
+     @media all and (min-width: 1200px) {
         &__article {
             margin: 20px 300px 20px 300px;
             align-items: center;

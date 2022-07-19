@@ -7,7 +7,7 @@ import { AiTwotoneStar } from 'react-icons/ai';
 
 function Product(props) {
   return (
-    <Link to={`/productDetail/${props.product.brand.id}`}>
+    <Link to={`/productDetail/${props.product.models[0].modelId}`}>
       <div className="product__article">
         <div className="product__imgPrice">
           <img
