@@ -97,6 +97,8 @@
     background-color: $--color-bg-yellow;
     height: 100%;
     width: 15%;
+    padding-right: 8px;
+    
     @media all and (min-width: 768px) {
       width: 10%;
      }

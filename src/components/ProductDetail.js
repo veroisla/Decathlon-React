@@ -5,7 +5,9 @@ import '../styles/components/ProductDetail.scss';
 import { AiTwotoneStar } from 'react-icons/ai';
 import { GiPresent } from 'react-icons/gi';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
-
+import { BsBoxSeam } from 'react-icons/bs';
+import { RiArrowLeftRightFill } from 'react-icons/ri';
+import { AiOutlineCheckSquare } from 'react-icons/ai';
 function ProductDetail(props) {
   return (
     <>
@@ -38,11 +40,38 @@ function ProductDetail(props) {
             ¿Quieres regalar este producto?{' '}
             <strong className="productDetail__present--strong">Más info</strong>
           </p>
+          <p className="productDetail__productNoOnline">
+            Ten en cuenta que los productos no disponibles online pueden estar
+            disponibles en tienda.
+          </p>
           <p className="productDetail__addToShop">
             <strong>Añadir a la cesta</strong>{' '}
             <AiOutlineShoppingCart className="productDetail__iconShop" />
           </p>
         </div>
+      </div>
+      <div className="productDetail__newsBox">
+        <p className="productDetail__newsText">
+          <AiOutlineCheckSquare className="productDetail__newsIcon" />
+          <strong className="productDetail__newsStrong">
+            ¡ENVÍO GRATIS!{' '}
+          </strong>{' '}
+          a todas nuestras tiendas*
+        </p>
+        <p className="productDetail__newsText">
+          <RiArrowLeftRightFill className="productDetail__newsIcon" />
+          <strong className="productDetail__newsStrong">
+            Devolución gratuita{' '}
+          </strong>{' '}
+          en 60 días*
+        </p>
+        <p className="productDetail__newsText">
+          <BsBoxSeam className="productDetail__newsIcon" />
+          <strong className="productDetail__newsStrong">
+            ¡ENVÍO GRATIS a domicilio!{' '}
+          </strong>{' '}
+          en compras superiores a 30€*
+        </p>
       </div>
     </>
   );
