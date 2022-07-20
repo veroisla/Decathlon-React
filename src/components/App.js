@@ -15,10 +15,26 @@ import ProductDetail from './ProductDetail';
 import Filters from './Filters';
 import Footer from '../components/Footer';
 
-function App(props) {
+function App() {
   const [dataProducts, setDataProducts] = useState([]);
   const [filterBrand, setFilterBrand] = useState([]);
   const [filterDepartment, setFilterDepartment] = useState([]);
+
+  //COLAPSABLES-----------------------------------------------------------------//
+  const [collapseFilter, setCollapseFilter] = useState('collapsed');
+
+  const handleCollapse = (legendId) => {
+    const idCollapse = legendId;
+    if (idCollapse === 'id-filters') {
+      if (collapseFilter === 'collapsed') {
+        setCollapseFilter('');
+      } else {
+        setCollapseFilter('collapsed');
+      }
+    }
+  };
+
+  //-------------------------------------------------
 
   useEffect(() => {
     getApiData().then((data) => {
@@ -115,6 +131,11 @@ function App(props) {
                     handleFilterBrand={handleFilterBrand}
                     department={getDepartment()}
                     handleFilterDepartment={handleFilterDepartment}
+                    //------------------------------
+                    handleCollapse={handleCollapse}
+                    collapseFilter={collapseFilter}
+
+                    //---------------------------------
                   />
                   <ListProducts products={productFilters} />
                 </div>

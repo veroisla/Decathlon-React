@@ -7,17 +7,30 @@ import FilterByDepartment from './FilterByDepartment';
 import { MdOutlineSettingsInputComposite } from 'react-icons/md';
 
 function Filters(props) {
+  //-----------------------------
+  const handleChangeCollapse = (ev) => {
+    ev.preventDefault();
+    const legendId = ev.currentTarget.id;
+    props.handleCollapse(legendId);
+  };
+
+  //---------------------------------
   const handleSubmitForm = (props) => {
     props.PreventSubmitForm();
   };
   return (
     <form onSubmit={handleSubmitForm}>
       <div className="filter">
-        <h3 className="filter__filtros">
+        <legend
+          className="filter__filtros"
+          id="id-filters"
+          onClick={handleChangeCollapse}
+        >
           <MdOutlineSettingsInputComposite className="filter__icon" />
           filtros
-        </h3>
-        <div className="filter__mobileVersion">
+        </legend>
+        {/* <div className="filter__mobileVersion"> */}
+        <div className={`filter__mobileVersion ${props.collapseFilter}`}>
           <FilterByBrand
             brands={props.brand}
             handleFilterBrand={props.handleFilterBrand}
