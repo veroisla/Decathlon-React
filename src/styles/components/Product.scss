@@ -2,22 +2,24 @@
 @import "../core/Vars.scss";
 .product {
     width: 50%;
+    
+    // margin-right: 15px;
+    // margin-left: 15px;
 
     @media all and (min-width: 1200px) {
-        width: 30%;
+        width: 40%;
     }
 
     &__article {
         display: flex;
         flex-direction: column;
         position: relative;
-        border: 1.5px solid $--color-border-white;
+        // border: 1.5px solid $--color-border-white;
         align-items: center;
         padding: 2.4rem 1.6rem 1.6rem;
-
-        @media all and (min-width: 1200px) {
-            width: 400px;
-          }}
+        // width: 50%;
+       
+    }
 
     &__imgPrice {
         display: flex;
@@ -44,7 +46,7 @@
         border-radius: 5px;
         text-align: center;
         margin-bottom: 30px;
-        width: fit-content;
+        width: 80px;
 
         @media all and (min-width: 768px) {
            align-self: flex-start;
@@ -64,6 +66,7 @@
         text-transform: uppercase;
         color: $--color-product-brand;
         margin-bottom: 5px;
+        line-height: 16px;
     }
 
     &__star {

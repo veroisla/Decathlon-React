@@ -26,8 +26,11 @@ function Filters(props) {
           id="id-filters"
           onClick={handleChangeCollapse}
         >
-          <MdOutlineSettingsInputComposite className="filter__icon" />
           filtros
+          <MdOutlineSettingsInputComposite
+            className="filter__icon"
+            onClick={handleChangeCollapse}
+          />
         </legend>
         {/* <div className="filter__mobileVersion"> */}
         <div className={`filter__mobileVersion ${props.collapseFilter}`}>
