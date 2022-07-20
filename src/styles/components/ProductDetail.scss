@@ -14,12 +14,12 @@
         align-items: center;
         padding: 0rem 1.6rem 1.6rem;}
 
-
-    &__img {
+    &__boxImg {
         width: 330px;  
-        margin-bottom: 10px;}
-
-      
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+    }
 
     &__webLabel {
         font-size: 24px;
@@ -70,6 +70,7 @@
         color: $--color-icons-grey;
         margin-right: 10px;
      }
+
      &--strong {
         color: $--color-detail-info;
         margin-left: 8px;
@@ -141,12 +142,11 @@
             text-align: left;
         }  
 
-        &__img {
-            display: flex;
-            justify-content: center;
-            width: auto;
-            height: 450px;
+        &__boxImg {
             margin-right: 60px;
+            display: flex;
+            align-self:center;
+            width: 700px;
         } 
 
         &__newsBox {
@@ -161,10 +161,10 @@
             margin: 20px 300px 20px 300px;
             align-items: center;
         }
-
+        
         &__img {
-            width: 450px;
-            margin-right: 40px;
+            width: 400px;
+            height: auto;
         } 
         
         &__info {

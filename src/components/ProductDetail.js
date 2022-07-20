@@ -16,11 +16,14 @@ function ProductDetail(props) {
         calzado deportivo... / zapatillas deportivas
       </p>
       <div className="productDetail__article">
-        <img
-          className="productDetail__img"
-          src={props.product.models[0].image.url}
-          alt={props.product.models[0].image.url}
-        />
+        <div className="productDetail__boxImg">
+          <img
+            className="productDetail__img"
+            src={props.product.models[0].image.url}
+            alt={props.product.models[0].image.url}
+          />
+        </div>
+
         <div className="productDetail__info">
           {' '}
           <p className="productDetail__webLabel">{props.product.webLabel}</p>

@@ -36,7 +36,7 @@ function App(props) {
     const uniqueBrand = productBrand.filter((brand, index) => {
       return productBrand.indexOf(brand) === index;
     });
-    return uniqueBrand;
+    return uniqueBrand.sort();
   };
 
   const handleFilterBrand = (value) => {
@@ -56,7 +56,7 @@ function App(props) {
     const uniqueDepartment = productDepartment.filter((department, index) => {
       return productDepartment.indexOf(department) === index;
     });
-    return uniqueDepartment;
+    return uniqueDepartment.sort(); //Ordenar alfabéticamente
   };
 
   const handleFilterDepartment = (value) => {
