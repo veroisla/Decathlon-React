@@ -2,16 +2,15 @@
 @import "../core/Vars.scss";
 
 .arrow {
-
+    
     &__icon {
     position: fixed;
     z-index: 300;
     bottom: 20px;
     right: 10px;
-    color: $--color-white;
-    background-color: $--color-bg-blue;
-    
+    color: $--color-bg-blue;
     font-size: 20px;
+    
     }
 
     &__show {

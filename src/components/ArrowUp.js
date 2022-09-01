@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { AiOutlineArrowUp } from 'react-icons/ai';
+import { BsArrowUpCircle } from 'react-icons/bs';
 import '../styles/components/ArrowUp.scss';
 
 const ArrowUp = () => {
@@ -32,7 +32,7 @@ const ArrowUp = () => {
       onClick={scrollToTop}
       className={visibleButton ? 'arrow__show' : 'arrow__notShow'}
     >
-      <AiOutlineArrowUp className="arrow__icon" />
+      <BsArrowUpCircle className="arrow__icon" />
     </div>
   );
 };
