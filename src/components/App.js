@@ -7,6 +7,7 @@ import '../styles/core/Reset.scss';
 import '../styles/core/Vars.scss';
 import '../styles/components/App.scss';
 
+import localStorage from '../services/localStorage';
 import Header from '../components/Header';
 import PreInfo from './PreInfo';
 import getApiData from '../services/DecathlonApi';
@@ -16,9 +17,15 @@ import Filters from './Filters';
 import Footer from '../components/Footer';
 
 function App() {
-  const [dataProducts, setDataProducts] = useState([]);
-  const [filterBrand, setFilterBrand] = useState([]);
-  const [filterDepartment, setFilterDepartment] = useState([]);
+  const [dataProducts, setDataProducts] = useState(
+    localStorage.get('dataProducts', [])
+  );
+  const [filterBrand, setFilterBrand] = useState(
+    localStorage.get('filterBrand', [])
+  );
+  const [filterDepartment, setFilterDepartment] = useState(
+    localStorage.get('filterDepartment', [])
+  );
 
   //COLAPSABLES-----------------------------------------------------------------//
   const [collapseFilter, setCollapseFilter] = useState('collapsed');
@@ -37,14 +44,18 @@ function App() {
   //-------------------------------------------------
 
   useEffect(() => {
-    getApiData().then((data) => {
-      setDataProducts(data);
-    });
+    if (dataProducts.length === 0) {
+      getApiData().then((data) => {
+        setDataProducts(data);
+      });
+    }
   }, []);
 
-  const PreventSubmitForm = (ev) => {
-    ev.preventDefault();
-  };
+  useEffect(() => {
+    localStorage.set('dataProducts', dataProducts);
+    localStorage.set('filterBrand', filterBrand);
+    localStorage.set('filterDepartment', filterDepartment);
+  }, [dataProducts, filterBrand, filterDepartment]);
 
   //GET BRAND
   const getBrand = () => {
@@ -84,6 +95,12 @@ function App() {
     } else {
       setFilterDepartment([...filterDepartment, value]);
     }
+  };
+
+  //BUTTON RESET
+  const handleResetButton = () => {
+    localStorage.remove('filterBrand');
+    localStorage.remove('filterDepartment');
   };
 
   //GET ID PRODUCT/DETAIL
@@ -126,7 +143,6 @@ function App() {
                 <div className="computerVersion">
                   {' '}
                   <Filters
-                    PreventSubmitForm={PreventSubmitForm}
                     brand={getBrand()}
                     handleFilterBrand={handleFilterBrand}
                     department={getDepartment()}
@@ -134,6 +150,7 @@ function App() {
                     //------------------------------
                     handleCollapse={handleCollapse}
                     collapseFilter={collapseFilter}
+                    handleResetButton={handleResetButton}
 
                     //---------------------------------
                   />

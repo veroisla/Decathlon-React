@@ -3,23 +3,19 @@ import '../styles/core/Vars.scss';
 import '../styles/components/Filters.scss';
 
 import FilterByBrand from '../components/FilterByBrand';
-import FilterByDepartment from './FilterByDepartment';
+import FilterByDepartment from '../components/FilterByDepartment';
+import ResetButton from '../components/ResetButton';
 import { MdOutlineSettingsInputComposite } from 'react-icons/md';
 
 function Filters(props) {
   //-----------------------------
   const handleChangeCollapse = (ev) => {
-    ev.preventDefault();
     const legendId = ev.currentTarget.id;
     props.handleCollapse(legendId);
   };
 
-  //---------------------------------
-  const handleSubmitForm = (props) => {
-    props.PreventSubmitForm();
-  };
   return (
-    <form onSubmit={handleSubmitForm}>
+    <form>
       <div className="filter">
         <legend
           className="filter__filtros"
@@ -44,6 +40,7 @@ function Filters(props) {
           />
         </div>
       </div>
+      <ResetButton handleResetButton={props.handleResetButton} />
     </form>
   );
 }
