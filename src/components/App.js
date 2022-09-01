@@ -20,9 +20,15 @@ function App() {
   const [dataProducts, setDataProducts] = useState(
     localStorage.get('dataProducts', [])
   );
+
+  const [inputSearch, setInputSearch] = useState(
+    localStorage.get('inputSearch', '')
+  );
+
   const [filterBrand, setFilterBrand] = useState(
     localStorage.get('filterBrand', [])
   );
+
   const [filterDepartment, setFilterDepartment] = useState(
     localStorage.get('filterDepartment', [])
   );
@@ -53,9 +59,15 @@ function App() {
 
   useEffect(() => {
     localStorage.set('dataProducts', dataProducts);
+    localStorage.set('inputSearch', inputSearch);
     localStorage.set('filterBrand', filterBrand);
     localStorage.set('filterDepartment', filterDepartment);
-  }, [dataProducts, filterBrand, filterDepartment]);
+  }, [dataProducts, filterBrand, filterDepartment, inputSearch]);
+
+  //INPUT SEARCH
+  const handleFilterByText = (value) => {
+    setInputSearch(value);
+  };
 
   //GET BRAND
   const getBrand = () => {
@@ -115,6 +127,15 @@ function App() {
   //FILTERS
   const productFilters = dataProducts
     .filter((product) => {
+      return (
+        product.sportGroups[0].label
+          .toLowerCase()
+          .includes(inputSearch.toLowerCase()) ||
+        product.brand.label.toLowerCase().includes(inputSearch.toLowerCase())
+      );
+    })
+
+    .filter((product) => {
       if (filterDepartment.length === 0) {
         return true;
       } else {
@@ -132,7 +153,7 @@ function App() {
   console.log(productFilters);
   return (
     <>
-      <Header />
+      <Header handleFilterByText={handleFilterByText} />
       <main>
         <Routes>
           <Route

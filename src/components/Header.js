@@ -11,7 +11,10 @@ import { BsPerson } from 'react-icons/bs';
 import { IoIosHelpCircleOutline } from 'react-icons/io';
 import { AiOutlineSearch } from 'react-icons/ai';
 
-function Header() {
+function Header(props) {
+  const handleChange = (ev) => {
+    props.handleFilterByText(ev.target.value);
+  };
   return (
     <header className="header">
       <div className="header__whiteText">
@@ -109,6 +112,8 @@ function Header() {
           className="search__input"
           type="text"
           placeholder="Busca producto, deporte..."
+          onChange={handleChange}
+          value={props.inputSearch}
         ></input>
         <div className="search__totalIcon">
           <div className="search__icon">
