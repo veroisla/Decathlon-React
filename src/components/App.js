@@ -15,6 +15,7 @@ import ListProducts from './ListProducts';
 import ProductDetail from './ProductDetail';
 import Filters from './Filters';
 import Footer from '../components/Footer';
+import ArrowUp from './ArrowUp';
 
 function App() {
   const [dataProducts, setDataProducts] = useState(
@@ -48,6 +49,8 @@ function App() {
   };
 
   //-------------------------------------------------
+
+  //-----------------
 
   useEffect(() => {
     if (dataProducts.length === 0) {
@@ -176,6 +179,7 @@ function App() {
 
                     //---------------------------------
                   />
+                  <ArrowUp />
                   <ListProducts
                     products={productFilters}
                     inputSearch={inputSearch}
