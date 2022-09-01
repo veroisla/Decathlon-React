@@ -65,7 +65,8 @@ function Header(props) {
             className="search__input"
             type="text"
             placeholder="Busca producto, deporte..."
-            disabled
+            onChange={handleChange}
+            value={props.inputSearch}
           ></input>
           <div className="search__totalIcon">
             <div className="search__icon">
