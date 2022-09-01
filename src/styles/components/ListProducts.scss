@@ -10,7 +10,8 @@
     width: 100%;
 
     &__noProduct {
-       color: $--color-no-product;
+       color: $--color-detail-id;
+       font-weight: bold;
        display: flex;
        width: fit-content;
        margin: 20px 30px 0px 30px;

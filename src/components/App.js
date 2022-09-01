@@ -113,6 +113,7 @@ function App() {
   const handleResetButton = () => {
     localStorage.remove('filterBrand');
     localStorage.remove('filterDepartment');
+    localStorage.remove('inputSearch');
   };
 
   //GET ID PRODUCT/DETAIL
@@ -175,7 +176,11 @@ function App() {
 
                     //---------------------------------
                   />
-                  <ListProducts products={productFilters} />
+                  <ListProducts
+                    products={productFilters}
+                    inputSearch={inputSearch}
+                    filterBrand={filterBrand}
+                  />
                 </div>
               </>
             }

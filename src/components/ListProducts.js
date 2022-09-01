@@ -4,12 +4,13 @@ import '../styles/components/ListProducts.scss';
 import '../styles/components/Product.scss';
 
 import Product from './Product';
+import { AiFillPropertySafety } from 'react-icons/ai';
 
 function ListProducts(props) {
   if (props.products.length === 0) {
     return (
       <p className="listProducts__noProduct">
-        No existen productos que coincidan con tu búsqueda
+        Ups! No se han encontrado resultados que coincidan con tu búsqueda
       </p>
     );
   } else {
