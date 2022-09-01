@@ -10,6 +10,7 @@
     right: 10px;
     color: $--color-bg-blue;
     font-size: 20px;
+    cursor: pointer;
     
     }
 
@@ -19,6 +20,14 @@
 
     &__notShow {
         opacity: 0;
+    }
+
+    @media all and (min-width:768px) {
+        &__icon {
+            bottom: 40px;
+            right: 40px;
+            font-size: 25px;
+        }
     }
 
 }

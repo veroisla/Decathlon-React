@@ -48,10 +48,7 @@ function App() {
     }
   };
 
-  //-------------------------------------------------
-
-  //-----------------
-
+  //FETCH Y LS
   useEffect(() => {
     if (dataProducts.length === 0) {
       getApiData().then((data) => {
@@ -114,9 +111,10 @@ function App() {
 
   //BUTTON RESET
   const handleResetButton = () => {
-    localStorage.remove('filterBrand');
-    localStorage.remove('filterDepartment');
-    localStorage.remove('inputSearch');
+    // localStorage.remove('filterBrand');
+    // localStorage.remove('filterDepartment');
+    // localStorage.remove('inputSearch');
+    localStorage.clear();
   };
 
   //GET ID PRODUCT/DETAIL
