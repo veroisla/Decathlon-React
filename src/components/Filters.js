@@ -8,14 +8,16 @@ import ResetButton from '../components/ResetButton';
 import { MdOutlineSettingsInputComposite } from 'react-icons/md';
 
 function Filters(props) {
-  //-----------------------------
   const handleChangeCollapse = (ev) => {
     const legendId = ev.currentTarget.id;
     props.handleCollapse(legendId);
   };
+  const handleSubmit = (ev) => {
+    props.handleSubmit(ev);
+  };
 
   return (
-    <form>
+    <form action="" onSubmit={handleSubmit}>
       <div className="filter">
         <legend
           className="filter__filtros"

@@ -7,7 +7,7 @@ import '../styles/core/Reset.scss';
 import '../styles/core/Vars.scss';
 import '../styles/components/App.scss';
 
-import localStorage from '../services/localStorage';
+import ls from '../services/localStorage';
 import Header from '../components/Header';
 import PreInfo from './PreInfo';
 import getApiData from '../services/DecathlonApi';
@@ -18,20 +18,14 @@ import Footer from '../components/Footer';
 import ArrowUp from './ArrowUp';
 
 function App() {
-  const [dataProducts, setDataProducts] = useState(
-    localStorage.get('dataProducts', [])
-  );
+  const [dataProducts, setDataProducts] = useState(ls.get('dataProducts', []));
 
-  const [inputSearch, setInputSearch] = useState(
-    localStorage.get('inputSearch', '')
-  );
+  const [inputSearch, setInputSearch] = useState(ls.get('inputSearch', ''));
 
-  const [filterBrand, setFilterBrand] = useState(
-    localStorage.get('filterBrand', [])
-  );
+  const [filterBrand, setFilterBrand] = useState(ls.get('filterBrand', []));
 
   const [filterDepartment, setFilterDepartment] = useState(
-    localStorage.get('filterDepartment', [])
+    ls.get('filterDepartment', [])
   );
 
   //COLAPSABLES-----------------------------------------------------------------//
@@ -48,7 +42,12 @@ function App() {
     }
   };
 
-  //FETCH Y LS
+  //PREVENIR ENVÍO POR DEFECTO
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+  };
+
+  //FETCH
   useEffect(() => {
     if (dataProducts.length === 0) {
       getApiData().then((data) => {
@@ -57,12 +56,15 @@ function App() {
     }
   }, []);
 
+  //GUARDAR EN LocalStorage
+
   useEffect(() => {
-    localStorage.set('dataProducts', dataProducts);
-    localStorage.set('inputSearch', inputSearch);
-    localStorage.set('filterBrand', filterBrand);
-    localStorage.set('filterDepartment', filterDepartment);
-  }, [dataProducts, filterBrand, filterDepartment, inputSearch]);
+    ls.set('dataProducts', dataProducts);
+    ls.set('inputSearch', inputSearch);
+    ls.set('filterBrand', filterBrand);
+    ls.set('filterDepartment', filterDepartment);
+  }, [dataProducts, inputSearch, filterBrand, filterDepartment]);
+  console.log(filterBrand);
 
   //INPUT SEARCH
   const handleFilterByText = (value) => {
@@ -111,10 +113,10 @@ function App() {
 
   //BUTTON RESET
   const handleResetButton = () => {
-    // localStorage.remove('filterBrand');
-    // localStorage.remove('filterDepartment');
-    // localStorage.remove('inputSearch');
-    localStorage.clear();
+    ls.remove('filterBrand');
+    ls.remove('filterDepartment');
+    ls.remove('inputSearch');
+    //ls.clear();
   };
 
   //GET ID PRODUCT/DETAIL
@@ -170,12 +172,10 @@ function App() {
                     handleFilterBrand={handleFilterBrand}
                     department={getDepartment()}
                     handleFilterDepartment={handleFilterDepartment}
-                    //------------------------------
+                    handleSubmit={handleSubmit}
                     handleCollapse={handleCollapse}
                     collapseFilter={collapseFilter}
                     handleResetButton={handleResetButton}
-
-                    //---------------------------------
                   />
                   <ArrowUp />
                   <ListProducts
