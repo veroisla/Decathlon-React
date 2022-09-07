@@ -20,13 +20,11 @@ import ArrowUp from './ArrowUp';
 function App() {
   const [dataProducts, setDataProducts] = useState(ls.get('dataProducts', []));
 
-  const [inputSearch, setInputSearch] = useState(ls.get('inputSearch', ''));
+  const [inputSearch, setInputSearch] = useState('');
 
-  const [filterBrand, setFilterBrand] = useState(ls.get('filterBrand', []));
+  const [filterBrand, setFilterBrand] = useState([]);
 
-  const [filterDepartment, setFilterDepartment] = useState(
-    ls.get('filterDepartment', [])
-  );
+  const [filterDepartment, setFilterDepartment] = useState([]);
 
   //COLAPSABLES-----------------------------------------------------------------//
   const [collapseFilter, setCollapseFilter] = useState('collapsed');
@@ -60,11 +58,7 @@ function App() {
 
   useEffect(() => {
     ls.set('dataProducts', dataProducts);
-    ls.set('inputSearch', inputSearch);
-    ls.set('filterBrand', filterBrand);
-    ls.set('filterDepartment', filterDepartment);
-  }, [dataProducts, inputSearch, filterBrand, filterDepartment]);
-  console.log(filterBrand);
+  }, [dataProducts]);
 
   //INPUT SEARCH
   const handleFilterByText = (value) => {
@@ -112,12 +106,12 @@ function App() {
   };
 
   //BUTTON RESET
-  const handleResetButton = () => {
-    ls.remove('filterBrand');
-    ls.remove('filterDepartment');
-    ls.remove('inputSearch');
-    //ls.clear();
-  };
+  // const handleResetButton = () => {
+  //   ls.remove('filterBrand');
+  //   ls.remove('filterDepartment');
+  //   ls.remove('inputSearch');
+  //   // ls.clear();
+  // };
 
   //GET ID PRODUCT/DETAIL
   const { pathname } = useLocation();
@@ -175,7 +169,7 @@ function App() {
                     handleSubmit={handleSubmit}
                     handleCollapse={handleCollapse}
                     collapseFilter={collapseFilter}
-                    handleResetButton={handleResetButton}
+                    // handleResetButton={handleResetButton}
                   />
                   <ArrowUp />
                   <ListProducts

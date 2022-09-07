@@ -42,7 +42,7 @@ function Filters(props) {
           />
         </div>
       </div>
-      <ResetButton handleResetButton={props.handleResetButton} />
+      {/* <ResetButton handleResetButton={props.handleResetButton} /> */}
     </form>
   );
 }
