@@ -4,7 +4,6 @@ import '../styles/components/ListProducts.scss';
 import '../styles/components/Product.scss';
 
 import Product from './Product';
-import { AiFillPropertySafety } from 'react-icons/ai';
 
 function ListProducts(props) {
   if (props.products.length === 0) {

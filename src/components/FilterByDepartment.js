@@ -16,6 +16,7 @@ function FilterByDepartment(props) {
             name="department"
             value={department}
             onChange={handleChange}
+            checked={props.filterDepartment}
           />
           <label className="filter__label" htmlFor="">
             {department}

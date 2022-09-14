@@ -20,7 +20,7 @@ import ArrowUp from './ArrowUp';
 function App() {
   const [dataProducts, setDataProducts] = useState(ls.get('dataProducts', []));
 
-  const [inputSearch, setInputSearch] = useState('');
+  const [inputSearch, setInputSearch] = useState(ls.get('inputSearch', ''));
 
   const [filterBrand, setFilterBrand] = useState([]);
 
@@ -58,7 +58,8 @@ function App() {
 
   useEffect(() => {
     ls.set('dataProducts', dataProducts);
-  }, [dataProducts]);
+    ls.set('inputSearch', inputSearch);
+  }, [dataProducts, inputSearch]);
 
   //INPUT SEARCH
   const handleFilterByText = (value) => {
@@ -106,12 +107,12 @@ function App() {
   };
 
   //BUTTON RESET
-  // const handleResetButton = () => {
-  //   ls.remove('filterBrand');
-  //   ls.remove('filterDepartment');
-  //   ls.remove('inputSearch');
-  //   // ls.clear();
-  // };
+  const handleResetButton = () => {
+    // ls.remove('filterBrand');
+    // ls.remove('filterDepartment');
+    ls.remove('inputSearch');
+    // ls.clear();
+  };
 
   //GET ID PRODUCT/DETAIL
   const { pathname } = useLocation();
@@ -148,10 +149,12 @@ function App() {
         return filterBrand.includes(product.brand.label);
       }
     });
-  console.log(productFilters);
   return (
     <>
-      <Header handleFilterByText={handleFilterByText} />
+      <Header
+        handleFilterByText={handleFilterByText}
+        inputSearch={inputSearch}
+      />
       <main>
         <Routes>
           <Route
@@ -169,7 +172,7 @@ function App() {
                     handleSubmit={handleSubmit}
                     handleCollapse={handleCollapse}
                     collapseFilter={collapseFilter}
-                    // handleResetButton={handleResetButton}
+                    handleResetButton={handleResetButton}
                   />
                   <ArrowUp />
                   <ListProducts

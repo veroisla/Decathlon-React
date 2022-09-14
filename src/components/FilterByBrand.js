@@ -16,6 +16,7 @@ function FilterByBrand(props) {
             name="brand"
             onChange={handleChange}
             value={brand}
+            checked={props.FilterByBrand}
           />
           <label className="filter__label" htmlFor="">
             {brand}

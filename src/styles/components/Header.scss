@@ -45,18 +45,7 @@
     background-color: #fff;
     position: relative;
 
-    &--logo {
-       align-self: center;
-       @media all and (min-width: 768px) {
-        order: -1;
-       }}
-
-    &--logoImg {
-       margin-left: 10px;
-       @media all and (min-width: 768px) {
-        width: 150px;
-       }
-    }
+    
    }
 
    //ICONS

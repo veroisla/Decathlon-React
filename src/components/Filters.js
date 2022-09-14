@@ -4,7 +4,6 @@ import '../styles/components/Filters.scss';
 
 import FilterByBrand from '../components/FilterByBrand';
 import FilterByDepartment from '../components/FilterByDepartment';
-import ResetButton from '../components/ResetButton';
 import { MdOutlineSettingsInputComposite } from 'react-icons/md';
 
 function Filters(props) {
@@ -30,7 +29,6 @@ function Filters(props) {
             onClick={handleChangeCollapse}
           />
         </legend>
-        {/* <div className="filter__mobileVersion"> */}
         <div className={`filter__mobileVersion ${props.collapseFilter}`}>
           <FilterByBrand
             brands={props.brand}
@@ -42,7 +40,6 @@ function Filters(props) {
           />
         </div>
       </div>
-      {/* <ResetButton handleResetButton={props.handleResetButton} /> */}
     </form>
   );
 }
