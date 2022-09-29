@@ -53,19 +53,14 @@
      }
 
     &__box {
-    -webkit-appearance: none;
-     -moz-appearance: none;
-     -o-appearance: none;
-     appearance: none;
      line-height: 28px;
      margin-right: 5px;
      border: solid 1.5px $--color-bg-blue;
      width: 15px;
      height: 15px;
      cursor: pointer;
-     &:checked {
-     background-color: $--color-bg-blue;
-     }}
+     accent-color: $--color-bg-blue;
+    }
 
     &__label {
      color: $--color-icons-grey;
